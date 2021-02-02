@@ -9,7 +9,27 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-
+    <?php
+        $db = new mysqli("localhost", "root", "", "base_apprenants");
+        if(isset($_POST['entrer'])){
+            $prouv = false; 
+            $passWord = $_POST['pass'];
+            $stmt = $db->prepare("SELECT * FROM identifiants WHERE user = ?");
+            $stmt->bind_param("s", $_POST['user']);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if ($result->num_rows>0) {
+                while ($data = $result->fetch_array()){
+                    if ($passWord == $data['passe']){
+                        header("location: admin.php");
+                    }
+                    else{
+                        header("location: login.php?error=motdepasse");
+                    }
+                }
+            }
+        }
+    ?>
      <!-- début entete-->
      <header> 
         <nav>
@@ -41,11 +61,11 @@
                         <div class="col-6 bg-light bloc1" style="margin-bottom: 100px;">
                             <h4 class="connecter">CONNEXION</h4>
                             <div class="centrer-fluid">
-                                <form method="post" action="analyse.php">
+                                <form method="post">
                                     <input class="input" type="text" name="user" placeholder="Nom dutilisateur"> 
-                                    <input class="input" type="password" name="passe" placeholder="Mot de passe"> 
+                                    <input class="input" type="password" name="pass" placeholder="Mot de passe"> 
                                 
-                                    <input class="soumettre" type="submit" value="se connecter">
+                                    <input class="soumettre" type="submit" value="se connecter" name="entrer">
                                 </form>
                             </div>
                         </div>

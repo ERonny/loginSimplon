@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>ENREGISTREMENT</title>
     <link rel="stylesheet" href="style/bootstrap-4.5.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styllog.css">
     <link rel="stylesheet" href="style/style.css"> 
+    <link rel="stylesheet" href="styllog.css">
 </head>
 <body>
     <!-- début entete-->
@@ -39,7 +39,7 @@
                     
             <div class="enregistrement">
                     <div class="col-6 bg-light bloc2" style="margin-bottom: 100px;">
-                        <h4 class="connecter">ENREGISTREMENT</h4>
+                        <h6 class="connecter">ENREGISTREMENT</h6>
                         <div class="centrer-fluid">
                             <form method="post" action="analyse.php">
                                 <input class="input" type="text" name="user" placeholder="Nom d'utilisateur"> 
@@ -47,6 +47,7 @@
                                 <input class="input" type="password" name="passe2" placeholder="Confirmer mot de passe">               
                                 <input class="soumettre" type="submit" value="s'enregistrer">
                             </form>
+                             <span class="connection" > <a href="login.php"> J'ai déja un compte</a></span>
                         </div>
                     </div>
             </div>

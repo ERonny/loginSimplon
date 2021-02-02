@@ -45,6 +45,8 @@ body{
     border: black solid 1px;
     margin-top: 40px;
     border-radius: 30px;
+    
+    
 }
 .input{
     display: block;
@@ -71,22 +73,12 @@ body{
 }
 
 .blocdouble{
-    background:rgba(55, 72, 116, 0.9);
-    
+    background:rgba(83, 100, 143, 0.9);     
 }
 
 
 
+
 /*Fin formulaire bn*/
-
-
-
-
-
-
-
-
-
-/* exemple*/
 
 
