@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+
+<!-- ddebut traitement connexion--> 
     <?php
         $db = new mysqli("localhost", "root", "", "base_apprenants");
         if(isset($_POST['entrer'])){
@@ -21,13 +23,14 @@
             if ($result->num_rows>0) {
                 while ($data = $result->fetch_array()){
                     if ($passWord == $data['passe']){
-                        header("location: admin.php");
+                        header("location: Apprenants_simplon/index.html");
                     }
                     else{
                         header("location: login.php?error=motdepasse");
+                        
                     }
                 }
-            }
+            } 
         }
     ?>
      <!-- début entete-->
